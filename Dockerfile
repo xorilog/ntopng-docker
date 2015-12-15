@@ -16,7 +16,7 @@ RUN rm -rf apt-ntop.deb
 # Install nProbe
 RUN apt-get update
 RUN wget http://packages.ntop.org/ubuntu/14.04/x64/ntopng/ntopng_2.3.151215-782_amd64.deb
-RUN apt-get install --no-install-recommends --no-install-suggests -yqq libpcap-dev libmysqlclient18 redis-server
+RUN apt-get install --no-install-recommends --no-install-suggests -yqq libpcap-dev libmysqlclient18 redis-server pfring libgeoip1 librrd4 libcurl3 libnuma1 libzmq3 libnetfilter-queue1 libhiredis0.10
 RUN sudo dpkg -i ntopng_2.3.151215-782_amd64.deb
 
 COPY run.sh /
