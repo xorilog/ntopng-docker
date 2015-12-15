@@ -15,7 +15,9 @@ RUN rm -rf apt-ntop.deb
 
 # Install nProbe
 RUN apt-get update
-RUN apt-get install --no-install-recommends --no-install-suggests -yqq ntopng libpcap-dev libmysqlclient18 redis-server
+RUN wget http://packages.ntop.org/ubuntu/14.04/x64/ntopng/ntopng_2.3.151215-782_amd64.deb
+RUN apt-get install --no-install-recommends --no-install-suggests -yqq libpcap-dev libmysqlclient18 redis-server
+RUN sudo dpkg -i ntopng_2.3.151215-782_amd64.deb
 
 COPY run.sh /
 RUN sudo chmod +x /run.sh
